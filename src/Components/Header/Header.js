@@ -16,20 +16,26 @@ export default function Header() {
   return (
     <div className="header">
       <div>
-        <Link to="/">TO-DO</Link>
+        <Link className="link" to="/">
+          TO-DO
+        </Link>
       </div>
 
       {!user && (
         <div>
-          <Link to="/auth/sign-in">SIGN IN</Link>
-          <Link to="/auth/sign-up">SIGN UP</Link>
+          <Link className="link" to="/auth/sign-in">
+            SIGN IN
+          </Link>
+          <Link className="link" to="/auth/sign-up">
+            SIGN UP
+          </Link>
         </div>
       )}
 
       {user && (
         <div className="user">
           <div className="signedIn">SIGNED IN: {user.email}</div>
-          <Link onClick={handleLogOut} to="/auth/sign-in">
+          <Link className="link" onClick={handleLogOut} to="/">
             LOG OUT
           </Link>
         </div>

@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams, Redirect, Link } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext.js';
 import { authUser } from '../../services/Authentication.js';
+
+import './Auth.css';
 
 export default function Auth() {
   const { type } = useParams();
@@ -23,14 +25,44 @@ export default function Auth() {
   };
 
   return (
-    <div className="auth">
-      <label>Email:</label>
-      <input type="text" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+    <div className="center">
+      <div className="auth">
+        {type === 'sign-in' && <p className="p">Sign In</p>}
+        {type === 'sign-up' && <p className="p">Sign Up</p>}
 
-      <label>Password</label>
-      <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+        <input
+          type="text"
+          value={email}
+          placeholder="username"
+          onChange={(e) => setEmail(e.target.value)}
+        ></input>
 
-      <button onClick={signUp}>Submit</button>
+        <input
+          type="password"
+          value={password}
+          placeholder="password"
+          onChange={(e) => setPassword(e.target.value)}
+        ></input>
+
+        <button onClick={signUp}>Submit</button>
+
+        {type === 'sign-in' && (
+          <div className="option">
+            <p className="p">Not a User? </p>
+            <Link className="link" to="/auth/sign-up">
+              Sign Up
+            </Link>
+          </div>
+        )}
+        {type === 'sign-up' && (
+          <div className="option">
+            <p className="p">Already have a account?</p>
+            <Link className="link" to="/auth/sign-in">
+              Sign In
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
