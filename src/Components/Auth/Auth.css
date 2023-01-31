@@ -47,7 +47,7 @@
   font-size: 1.5rem;
 }
 
-input {
+.auth-input {
   font-family: 'Raleway', sans-serif;
   display: block;
   width: 80%;
@@ -59,7 +59,7 @@ input {
   outline: none;
 }
 
-button {
+.auth-button {
   cursor: pointer;
   border: 0;
   border-radius: 4px;
@@ -72,7 +72,7 @@ button {
   transition: 0.4s;
 }
 
-button:hover {
+.auth-button:hover {
   color: white;
   box-shadow: 0 0 20px #fff;
   background-color: #8bc6ec;

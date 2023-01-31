@@ -38,13 +38,16 @@ export default function Auth() {
         ></input>
 
         <input
+          className="auth-input"
           type="password"
           value={password}
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         ></input>
 
-        <button onClick={signUp}>Submit</button>
+        <button className="auth-button" onClick={signUp}>
+          Submit
+        </button>
 
         {type === 'sign-in' && (
           <div className="option">
