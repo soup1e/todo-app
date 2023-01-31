@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+
+.form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.content {
+  display: flex;
+  flex-flow: column wrap;
+  background-color: #fff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 15px;
+  min-height: 45vh;
+  min-width: 500px;
+  width: 20vw;
+}
+.todo-input {
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 10px;
+  border: none;
+  margin: 15px;
+  border-bottom: 3px solid rgb(128, 125, 125);
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.todo-button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  font-weight: 600;
+  width: 250px;
+  padding: 10px 0;
+  box-shadow: 0 0 20px rgba(85, 187, 224, 0.2);
+  transition: 0.4s;
+  margin: 15px;
+}
+
+.todo-button:hover {
+  color: white;
+  box-shadow: 0 0 20px #fff;
+  background-color: #8bc6ec;
+}
+
+.todo-list {
+  font-family: 'Raleway', sans-serif;
+  margin: 15px;
+  font-size: 1.5rem;
+}
+
+.todo {
+  padding: 5px 25px;
+}

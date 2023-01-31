@@ -18,7 +18,8 @@
   padding: 30px;
   border-radius: 15px;
   min-height: 45vh;
-  min-width: 20vw;
+  min-width: 500px;
+  width: 20vw;
 }
 
 .option {

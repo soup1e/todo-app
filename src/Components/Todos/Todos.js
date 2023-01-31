@@ -26,18 +26,23 @@ export default function Todos() {
       <div className="content">
         <div className="form">
           <input
+            className="todo-input"
             type="text"
             required
             placeholder="todo..."
             value={todoInput}
             onChange={(e) => setTodoInput(e.target.value)}
           />
-          <button onClick={handleAddTodo}>Add todo</button>
+          <button className="todo-button" onClick={handleAddTodo}>
+            Add todo
+          </button>
         </div>
 
         <div className="todo-list">
           {todo.map((todo) => (
-            <div key={todo.id}>{todo.description.toUpperCase()}</div>
+            <div className="todo" key={todo.id}>
+              {todo.description}
+            </div>
           ))}
         </div>
       </div>

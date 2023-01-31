@@ -26,46 +26,49 @@ export default function Auth() {
 
   return (
     <div className="center">
-      <div className="auth">
-        {type === 'sign-in' && <p className="p">Sign In</p>}
-        {type === 'sign-up' && <p className="p">Sign Up</p>}
+      <form>
+        <div className="auth">
+          {type === 'sign-in' && <p className="p">Sign In</p>}
+          {type === 'sign-up' && <p className="p">Sign Up</p>}
 
-        <input
-          type="text"
-          value={email}
-          placeholder="username"
-          onChange={(e) => setEmail(e.target.value)}
-        ></input>
+          <input
+            className="auth-input"
+            type="text"
+            value={email}
+            placeholder="username"
+            onChange={(e) => setEmail(e.target.value)}
+          ></input>
 
-        <input
-          className="auth-input"
-          type="password"
-          value={password}
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-        ></input>
+          <input
+            className="auth-input"
+            type="password"
+            value={password}
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+          ></input>
 
-        <button className="auth-button" onClick={signUp}>
-          Submit
-        </button>
+          <button className="auth-button" onClick={signUp}>
+            Submit
+          </button>
 
-        {type === 'sign-in' && (
-          <div className="option">
-            <p className="p">Not a User? </p>
-            <Link className="link" to="/auth/sign-up">
-              Sign Up
-            </Link>
-          </div>
-        )}
-        {type === 'sign-up' && (
-          <div className="option">
-            <p className="p">Already have a account?</p>
-            <Link className="link" to="/auth/sign-in">
-              Sign In
-            </Link>
-          </div>
-        )}
-      </div>
+          {type === 'sign-in' && (
+            <div className="option">
+              <p className="p">Not a User? </p>
+              <Link className="link" to="/auth/sign-up">
+                Sign Up
+              </Link>
+            </div>
+          )}
+          {type === 'sign-up' && (
+            <div className="option">
+              <p className="p">Already have a account?</p>
+              <Link className="link" to="/auth/sign-in">
+                Sign In
+              </Link>
+            </div>
+          )}
+        </div>
+      </form>
     </div>
   );
 }
